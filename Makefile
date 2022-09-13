@@ -11,7 +11,7 @@ changelog:
 	ruby scripts/changelog.rb "${VERSION}"
 
 commit:
-	git commit CHANGELOG.md -m "Release v${VERSION}"
+	git commit package.json package-lock.json CHANGELOG.md -m "Release v${VERSION}"
 	git push origin "$$(git rev-parse --abbrev-ref HEAD)"
 
 tag:

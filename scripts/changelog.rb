@@ -21,5 +21,11 @@ changelog = File.read(file)
 marker = "<!-- new section -->\n"
 
 File.open(file, 'w') do |handle|
-  handle.write(changelog.gsub(marker, "#{marker}\n#{section}"))
+  # We replace GitLab specific links so they render properly in the marketplace.
+  new_data = changelog
+    .gsub(marker, "#{marker}\n#{section}")
+    .gsub('inko-lang/vscode@', 'https://gitlab.com/inko-lang/vscode/-/commit/')
+    .gsub('inko-lang/vscode!', 'https://gitlab.com/inko-lang/vscode/-/merge_requests/')
+
+  handle.write(new_data)
 end
