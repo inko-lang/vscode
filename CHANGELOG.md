@@ -4,6 +4,12 @@
 
 <!-- new section -->
 
+## 0.2.0 (2022-09-13)
+
+### Other (1 change)
+
+- [Add sponsorship link to the package](https://gitlab.com/inko-lang/vscode/-/commit/1a2b1c88ab0af2112acdde8fe0b26867d4cf46d1)
+
 ## 0.1.0 (2022-09-13)
 
 This is the initial release of the extension.
