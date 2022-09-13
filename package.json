@@ -4,10 +4,7 @@
     "description": "Language support for the Inko programming language",
     "icon": "images/inko-icon.png",
     "version": "0.1.0",
-    "publisher": "yorickpeterse",
-    "author": {
-        "name": "Yorick Peterse"
-    },
+    "publisher": "inko-lang",
     "license": "MPL-2.0",
     "repository": {
         "type": "git",
