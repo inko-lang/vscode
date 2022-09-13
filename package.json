@@ -6,6 +6,9 @@
     "version": "0.1.0",
     "publisher": "inko-lang",
     "license": "MPL-2.0",
+    "sponsor": {
+        "url": "https://github.com/sponsors/yorickpeterse"
+    },
     "repository": {
         "type": "git",
         "url": "https://gitlab.com/inko-lang/vscode"
