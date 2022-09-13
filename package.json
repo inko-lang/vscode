@@ -1,0 +1,49 @@
+{
+    "name": "inko",
+    "displayName": "Inko",
+    "description": "Language support for the Inko programming language",
+    "icon": "images/inko-icon.png",
+    "version": "0.1.0",
+    "publisher": "yorickpeterse",
+    "author": {
+        "name": "Yorick Peterse"
+    },
+    "license": "MPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.com/inko-lang/vscode"
+    },
+    "engines": {
+        "vscode": "^1.71.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "inko",
+                "extensions": [
+                    ".inko"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "inko",
+                "scopeName": "source.inko",
+                "path": "./syntaxes/inko.tmLanguage.json"
+            }
+        ],
+        "configurationDefaults": {
+            "[inko]": {
+                "editor.insertSpaces": true,
+                "editor.tabSize": 2
+            }
+        }
+    },
+    "devDependencies": {
+        "vsce": "^2.11.0"
+    }
+}

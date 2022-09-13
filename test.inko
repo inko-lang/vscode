@@ -1,0 +1,83 @@
+import std::stdio::STDOUT
+
+class pub Person {
+  let @name: String
+  let @age: Int
+}
+
+class enum Result[T, E] {
+  case Ok(T)
+  case Err(E)
+
+  fn ok? -> Bool {
+    match self {
+      case Ok(_) -> true
+      case _ -> false
+    }
+  }
+}
+
+class pub async Testing {
+  let @values: Array[uni Thing]
+}
+
+trait ToFoo {
+  fn to_foo !! Int -> String
+
+  fn to_bla(arg: Int) -> Int {
+    arg * 2
+  }
+}
+
+impl Thing for AnotherThing {
+
+}
+
+impl Thing {
+  
+}
+
+class async Main {
+  fn async main {
+    10.2
+    10.2e5
+    100
+    100_000
+    0xdeadbeef
+    "double quoted string"
+    "string with \u{fff} escape sequences \n\r\t"
+    "string with {10 + 5} interpolation"
+    "string with a #comment in it"
+    'single qouted string'
+    "string that spans \
+    multiple \
+    lines"
+
+    10 / 20
+    10.5 + 1.2
+    1 << 3
+
+    # A comment
+    identifier
+    @field_reference
+    method()
+    self
+    self.foo(10, 20)
+    self.bar(number: 20, bla, 30)
+    STDOUT.new.print('hello')
+    (10, 20)
+    [10, 20, 30]
+    {
+      # ...
+    }
+
+    return 42
+    throw 42
+    try foo
+    try! foo
+
+    # A closure
+    fn (number) -> Int { return number * 2 }
+    fn (a: Int) -> Int { a * a }
+  }
+}

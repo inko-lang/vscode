@@ -1,0 +1,280 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Inko",
+    "scopeName": "source.inko",
+    "fileTypes": ["inko"],
+    "patterns": [
+        { "include": "#keywords" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
+        { "include": "#types" },
+        { "include": "#methods" },
+        { "include": "#variables" },
+        { "include": "#comments" },
+        { "include": "#misc" }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.repeat.inko",
+                    "match": "\\b(while|loop)\\b"
+                },
+                {
+                    "name": "keyword.control.flow.inko",
+                    "match": "\\b(break|next|return)\\b"
+                },
+                {
+                    "name": "keyword.control.conditional.inko",
+                    "match": "\\b(if|else|match|and|or)\\b"
+                },
+                {
+                    "name": "keyword.control.trycatch.inko",
+                    "match": "\\b(try!)"
+                },
+                {
+                    "name": "keyword.control.trycatch.inko",
+                    "match": "\\b(throw|try)\\b"
+                },
+                {
+                    "name": "keyword.control.storage.inko",
+                    "match": "\\b(pub|async|mut|move|static)\\b"
+                },
+                {
+                    "name": "keyword.other.inko",
+                    "match": "\\b(let|ref|import|as|self|uni|recover|case)\\b"
+                },
+                {
+                    "name": "keyword.constant.bool.inko",
+                    "match": "\\b(true|false)\\b"
+                },
+                {
+                    "name": "keyword.constant.default.inko",
+                    "match": "\\b(nil)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.inko",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        { "include": "#stringcontent" },
+                        { "include": "#interpolated" }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.inko",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        },
+        "stringcontent": {
+            "patterns": [
+                {
+                    "name": "constant.character.escape.inko",
+                    "match": "\\\\([nrt'\"\\\\]|(u\\{[0-9a-fA-F]+\\}))"
+                }
+            ]
+        },
+        "interpolated": {
+            "patterns": [
+                {
+                    "name": "meta.embedded.line.inko",
+                    "begin": "(?<!\\\\){",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.inko"
+                        }
+                    },
+                    "contentName": "source.inko",
+                    "end": "}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.inko"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.inko",
+                    "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9_]+)?\\b"
+                },
+                {
+                    "name": "constant.numeric.hex.inko",
+                    "match": "\\b0x[a-fA-F0-9_]+\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "meta.class.inko",
+                    "match": "\\b(class)\\s+((pub\\s+)?((async|enum|builtin)\\s+)?)?([a-zA-Z_][a-zA-Z0-9_]*)",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.inko"
+                        },
+                        "3": {
+                            "name": "keyword.control.storage.inko"
+                        },
+                        "5": {
+                            "name": "keyword.control.storage.inko"
+                        },
+                        "6": {
+                            "name": "entity.name.type.inko"
+                        }
+                    }
+                },
+                {
+                    "name": "meta.trait.inko",
+                    "match": "\\b(trait)\\s+(pub\\s+)?([a-zA-Z_][a-zA-Z0-9_]*)",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.inko"
+                        },
+                        "2": {
+                            "name": "keyword.control.storage.inko"
+                        },
+                        "3": {
+                            "name": "entity.name.type.inko"
+                        }
+                    }
+                },
+                {
+                    "name": "meta.impl.inko",
+                    "match": "\\b(impl)\\s+([a-zA-Z_][a-zA-Z0-9_]*)(\\s+(for)\\s+([a-zA-Z_][a-zA-Z0-9_]*))?",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.inko"
+                        },
+                        "2": {
+                            "name": "entity.name.type.inko"
+                        },
+                        "4": {
+                            "name": "storage.type.inko"
+                        },
+                        "5": {
+                            "name": "entity.name.type.inko"
+                        }
+                    }
+                }
+            ]
+        },
+        "methods": {
+            "patterns": [
+                {
+                    "name": "meta.function.declaration.inko",
+                    "match": "\\b(fn)(\\s+((pub\\s+)?((mut|move|async|async mut)\\s+)?)?([a-zA-Z0-9_]+[\\?=!]?))?",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.function.inko"
+                        },
+                        "4": {
+                            "name": "keyword.control.storage.inko"
+                        },
+                        "6": {
+                            "name": "keyword.control.storage.inko"
+                        },
+                        "7": {
+                            "name": "entity.name.function.inko"
+                        }
+                    }
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.other.readwrite.instance.inko",
+                    "match": "@[a-zA-Z0-9_]\\w*"
+                },
+                {
+                    "name": "variable.other.constant.inko",
+                    "match": "\\b[_A-Z]\\w*\\b"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.inko",
+                    "match": "#.*"
+                }
+            ]
+        },
+        "misc": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.misc.inko",
+                    "match": "(->|!!|::)"
+                },
+                {
+                    "name": "punctuation.brackets.round.inko",
+                    "match": "(\\(|\\))"
+                },
+                {
+                    "name": "punctuation.brackets.square.inko",
+                    "match": "(\\[|\\])"
+                },
+                {
+                    "name": "punctuation.brackets.curly.inko",
+                    "match": "(\\{|\\})"
+                },
+                {
+                    "name": "meta.function.call.inko",
+                    "begin": "([a-zA-Z0-9_]+(\\?|!|=)?)(\\()",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "entity.name.function.inko"
+                        },
+                        "2": {
+                            "name": "punctuation.section.function.inko"
+                        }
+                    },
+                    "end": "(\\))",
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.section.function.inko"
+                        }
+                    },
+                    "patterns": [
+                        { "include": "$self" },
+                        { "include": "#named_arguments" }
+                    ]
+                },
+                {
+                    "name": "meta.function.call.inko",
+                    "match": "\\.([a-zA-Z0-9_]+(\\?|!|=)?)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.function.inko"
+                        },
+                        "2": {
+                            "name": "punctuation.section.function.inko"
+                        }
+                    }
+                }
+            ]
+        },
+        "named_arguments": {
+            "patterns": [
+                {
+                    "name": "variable.parameter.function-call.inko",
+                    "match": "([a-zA-Z_]+):"
+                }
+            ]
+        }
+    }
+}
