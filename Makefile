@@ -8,7 +8,7 @@ version:
 	mv new.json package.json
 
 changelog:
-	ruby scripts/changelog.rb "${VERSION}"
+	clogs "${VERSION}"
 
 commit:
 	git commit package.json package-lock.json CHANGELOG.md -m "Release v${VERSION}"
