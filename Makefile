@@ -15,7 +15,7 @@ commit:
 	git push origin "$$(git rev-parse --abbrev-ref HEAD)"
 
 tag:
-	git tag -s -a -m "Release v${VERSION}" "v${VERSION}"
+	git tag -a -m "Release v${VERSION}" "v${VERSION}"
 	git push origin "v${VERSION}"
 
 publish: version changelog commit tag
