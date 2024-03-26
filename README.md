@@ -3,7 +3,7 @@
 This extension adds support for [Inko](https://inko-lang.org/).
 
 If you encounter any bugs, please report them
-[here](https://gitlab.com/inko-lang/vscode).
+[here](https://github.com/inko-lang/vscode).
 
 ## License
 

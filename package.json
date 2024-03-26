@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://gitlab.com/inko-lang/vscode"
+        "url": "https://github.com/inko-lang/vscode"
     },
     "engines": {
         "vscode": "^1.71.0"
