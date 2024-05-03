@@ -1,7 +1,7 @@
 VERSION != jq -r .version package.json
 
 build:
-	npx vsce package
+	npx @vscode/vsce package
 
 version:
 	jq --indent 4 -M '.version = "${VERSION}"' package.json > new.json
@@ -19,6 +19,6 @@ tag:
 	git push origin "v${VERSION}"
 
 publish: version changelog commit tag
-	npx vsce publish
+	npx @vscode/vsce publish
 
 .PHONY: version changelog commit tag publish
