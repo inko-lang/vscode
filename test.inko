@@ -37,6 +37,20 @@ impl Thing {
   
 }
 
+fn pub inline example {}
+
+class pub inline InlineType {
+  fn pub inline foo {}
+  fn pub inline mut bar {}
+  fn pub inline move baz {}
+}
+
+class pub inline enum InlineEnum {}
+
+class pub copy enum CopyEnum {}
+
+class pub copy CopyType {}
+
 class async Main {
   fn async main {
     10.2

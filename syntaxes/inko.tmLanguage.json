@@ -121,7 +121,7 @@
             "patterns": [
                 {
                     "name": "meta.class.inko",
-                    "match": "\\b(class)\\s+((pub\\s+)?((async|enum|builtin|extern)\\s+)?)?([a-zA-Z_][a-zA-Z0-9_]*)",
+                    "match": "\\b(class)\\s+((pub\\s+)?((inline enum|copy enum|async|enum|copy|inline|builtin|extern)\\s+)?)?([a-zA-Z_][a-zA-Z0-9_]*)",
                     "captures": {
                         "1": {
                             "name": "storage.type.inko"
@@ -176,7 +176,7 @@
             "patterns": [
                 {
                     "name": "meta.function.declaration.inko",
-                    "match": "\\b(fn)(\\s+((pub\\s+)?((mut|move|async|async mut|extern)\\s+)?)?([a-zA-Z0-9_]+[\\?=!]?))?",
+                    "match": "\\b(fn)(\\s+((pub\\s+)?((inline mut|inline move|mut|move|async|async mut|inline|extern)\\s+)?)?([a-zA-Z0-9_]+[\\?=!]?))?",
                     "captures": {
                         "1": {
                             "name": "storage.type.function.inko"
