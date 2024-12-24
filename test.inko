@@ -1,11 +1,11 @@
 import std::stdio::STDOUT
 
-class pub Person {
+type pub Person {
   let @name: String
   let @age: Int
 }
 
-class enum Result[T, E] {
+type enum Result[T, E] {
   case Ok(T)
   case Err(E)
 
@@ -17,7 +17,7 @@ class enum Result[T, E] {
   }
 }
 
-class pub async Testing {
+type pub async Testing {
   let @values: Array[uni Thing]
 }
 
@@ -39,19 +39,19 @@ impl Thing {
 
 fn pub inline example {}
 
-class pub inline InlineType {
+type pub inline InlineType {
   fn pub inline foo {}
   fn pub inline mut bar {}
   fn pub inline move baz {}
 }
 
-class pub inline enum InlineEnum {}
+type pub inline enum InlineEnum {}
 
-class pub copy enum CopyEnum {}
+type pub copy enum CopyEnum {}
 
-class pub copy CopyType {}
+type pub copy CopyType {}
 
-class async Main {
+type async Main {
   fn async main {
     10.2
     10.2e5

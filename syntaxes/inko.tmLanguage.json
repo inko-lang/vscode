@@ -121,7 +121,7 @@
             "patterns": [
                 {
                     "name": "meta.class.inko",
-                    "match": "\\b(class)\\s+((pub\\s+)?((inline enum|copy enum|async|enum|copy|inline|builtin|extern)\\s+)?)?([a-zA-Z_][a-zA-Z0-9_]*)",
+                    "match": "\\b(class|type)\\s+((pub\\s+)?((inline enum|copy enum|async|enum|copy|inline|builtin|extern)\\s+)?)?([a-zA-Z_][a-zA-Z0-9_]*)",
                     "captures": {
                         "1": {
                             "name": "storage.type.inko"
