@@ -8,13 +8,6 @@
 
 - [Highlight the "inline" and "copy" keywords](https://github.com/inko-lang/vscode/commit/e0f67ad36755132bac252672df27f35895d7a77b)
 
-## 0.4.0 (2024-12-24)
-
-### Added
-
-- [Highlight the "type" keyword](https://github.com/inko-lang/vscode/commit/88e03a9afb182430501d4d7ae09c29c6ed2664ca)
-- [Highlight the "inline" and "copy" keywords](https://github.com/inko-lang/vscode/commit/e0f67ad36755132bac252672df27f35895d7a77b)
-
 ## 0.3.0 (2024-05-03)
 
 ### Changed
