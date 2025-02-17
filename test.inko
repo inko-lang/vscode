@@ -1,4 +1,4 @@
-import std::stdio::STDOUT
+import std.stdio (Stdout)
 
 type pub Person {
   let @name: String
@@ -22,7 +22,7 @@ type pub async Testing {
 }
 
 trait ToFoo {
-  fn to_foo !! Int -> String
+  fn to_foo -> String
 
   fn to_bla(arg: Int) -> Int {
     arg * 2
@@ -34,7 +34,7 @@ impl Thing for AnotherThing {
 }
 
 impl Thing {
-  
+
 }
 
 fn pub inline example {}
@@ -63,8 +63,8 @@ type async Main {
     "string with {10 + 5} interpolation"
     "string with a #comment in it"
     'single qouted string'
-    "string that spans \
-    multiple \
+    "string that spans
+    multiple
     lines"
 
     10 / 20
@@ -78,7 +78,7 @@ type async Main {
     self
     self.foo(10, 20)
     self.bar(number: 20, bla, 30)
-    STDOUT.new.print('hello')
+    Stdout.new.print('hello')
     (10, 20)
     [10, 20, 30]
     {
@@ -88,7 +88,6 @@ type async Main {
     return 42
     throw 42
     try foo
-    try! foo
 
     # A closure
     fn (number) -> Int { return number * 2 }
