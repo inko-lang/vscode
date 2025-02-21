@@ -18,7 +18,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.repeat.inko",
-                    "match": "\\b(while|loop)\\b"
+                    "match": "\\b(while|loop|for)\\b"
                 },
                 {
                     "name": "keyword.control.flow.inko",
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "keyword.other.inko",
-                    "match": "\\b(let|ref|import|as|self|uni|recover|case)\\b"
+                    "match": "\\b(let|ref|import|as|self|uni|recover|case|in)\\b"
                 },
                 {
                     "name": "keyword.constant.bool.inko",
