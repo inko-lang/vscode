@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "keyword.other.inko",
-                    "match": "\\b(let|ref|import|as|self|uni|recover|case|in)\\b"
+                    "match": "\\b(let|ref|import|as|self|uni|recover|case|in|async|await)\\b"
                 },
                 {
                     "name": "keyword.constant.bool.inko",
