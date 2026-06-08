@@ -18,7 +18,7 @@ tag:
 	git tag -a -m "Release v${VERSION}" "v${VERSION}"
 	git push origin "v${VERSION}"
 
-publish: version changelog commit tag
+release: version changelog commit tag
 	npx @vscode/vsce publish
 
-.PHONY: version changelog commit tag publish
+.PHONY: version changelog commit tag release
