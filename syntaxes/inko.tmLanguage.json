@@ -114,6 +114,10 @@
                 {
                     "name": "constant.numeric.hex.inko",
                     "match": "\\b0x[a-fA-F0-9_]+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.inko",
+                    "match": "\\b0b[0-1_]+\\b"
                 }
             ]
         },

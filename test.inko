@@ -70,6 +70,7 @@ type async Main {
     10 / 20
     10.5 + 1.2
     1 << 3
+    0b11_11
 
     # A comment
     identifier
